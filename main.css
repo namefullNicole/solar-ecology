@@ -66,11 +66,14 @@ body {
 }
 
 .content > .topbar {
+    margin: auto;
+    height: 5%;
     background-color: var(--bg1);
+    padding-top: 1%;
+    border-bottom: 5px solid var(--bg0);
 }
 
 .content > .topbar > h1 {
     text-align: center;
-    margin-top: 1%;
     font-size: 31pt;
 }
