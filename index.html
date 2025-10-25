@@ -22,6 +22,68 @@
     <nav class="topbar">
       <h1>Strona Glowna <i class="fa-solid fa-house"></i></h1>
     </nav>
+
+    <h2 style="text-align: center; margin-top: 1%;">Co to jest energia sloneczna?</h2>
+    <p>Energia słoneczna to forma energii, która pochodzi od Słońca. Jest to jedno z odnawialnych źródeł energii, co oznacza, że jest naturalnie odnawiana i nie wyczerpuje się w krótkim czasie. Słońce emituje ogromne ilości energii w postaci promieniowania elektromagnetycznego (światła i ciepła), które dociera do Ziemi. Dzięki odpowiednim technologiom, takimi jak panele fotowoltaiczne czy kolektory słoneczne, możemy tę energię przechwytywać i wykorzystywać na różne sposoby.</p>
+
+    <h2 style="text-align: center; margin-top: 1%;">Po co jest?</h2>
+    <p>Energia słoneczna ma wiele zastosowań i korzyści, a jej głównym celem jest zaspokojenie rosnącego zapotrzebowania na czystą i odnawialną energię, przy jednoczesnym zmniejszeniu negatywnego wpływu na środowisko. Oto kilka powodów, po co wykorzystuje się energię słoneczną:</p>
+
+    <br>
+
+    <div class="boxes">
+      <div class="openbox">
+        <h2>Ochrona środowiska <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Energia słoneczna jest czysta i odnawialna, co oznacza, że jej pozyskiwanie nie generuje zanieczyszczeń ani gazów cieplarnianych, w przeciwieństwie do paliw kopalnych (węgiel, gaz, ropa). Przejście na energię słoneczną pomaga w redukcji zmian klimatycznych, zmniejsza zanieczyszczenie powietrza i wody, a także ogranicza uzależnienie od zasobów naturalnych, które </p>
+      </div>
+      <div class="openbox">
+        <h2>Odnawialność <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>W przeciwieństwie do paliw kopalnych, które są ograniczone i w końcu się wyczerpią, energia słoneczna jest dostępna nieprzerwanie, każdego dnia, przez całą dobę (oczywiście z różnym natężeniem, zależnym od pory dnia i roku, ale jest to źródło praktycznie nieograniczone przez długie okresy czasu). To sprawia, że jest to świetna alternatywa dla tradycyjnych źródeł energii.</p>
+      </div>
+      <div class="openbox">
+        <h2>Oszczędności finansowe <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Choć początkowa inwestycja w panele fotowoltaiczne czy systemy grzewcze słoneczne może być kosztowna, długoterminowe oszczędności mogą być znaczne. Zmniejsza to rachunki za prąd i ogrzewanie, a w niektórych krajach istnieją programy wsparcia finansowego, subsydia, czy ulgi podatkowe, które pomagają w sfinansowaniu instalacji. Dodatkowo w niektórych miejscach można sprzedawać nadwyżki wyprodukowanej energii do sieci.</p>
+      </div>
+       <div class="openbox">
+        <h2>Dostępność <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Energia słoneczna jest dostępna praktycznie wszędzie. Nawet w odległych, wiejskich czy słabiej zurbanizowanych rejonach, gdzie dostęp do sieci energetycznej może być utrudniony, energia słoneczna jest doskonałym rozwiązaniem. Panele fotowoltaiczne można zamontować na dachach budynków, a kolektory słoneczne na ogrzewanie wody są stosunkowo proste do zainstalowania.</p>
+      </div>
+      <div class="openbox">
+        <h2>Tworzenie nowych miejsc pracy <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Rozwój przemysłu energii słonecznej generuje nowe miejsca pracy – od projektowania, instalacji, aż po serwisowanie systemów słonecznych. Jest to także branża, która rozwija się dynamicznie na całym świecie, przyczyniając się do wzrostu gospodarki.</p>
+      </div>
+       <div class="openbox">
+        <h2>Zwiększenie efektywności energetycznej <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Wykorzystanie energii słonecznej w połączeniu z innymi technologiami, jak magazynowanie energii w akumulatorach, czy inteligentne systemy zarządzania energią, może pomóc w jeszcze lepszym wykorzystaniu energii elektrycznej i ciepła, zwiększając efektywność energetyczną budynków i całych gospodarstw domowych.</p>
+      </div>
+      <div class="openbox">
+        <h2>Niezależność energetyczna <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Wykorzystanie energii słonecznej pozwala zmniejszyć zależność od sieci energetycznych i innych zewnętrznych źródeł energii. Może to być szczególnie istotne w rejonach, które mają ograniczony dostęp do tradycyjnych źródeł energii. Dzięki instalacji paneli słonecznych na własnym dachu, możemy produkować własną energię, co pozwala na większą autonomię energetyczną.</p>
+      </div>
+       <div class="openbox">
+        <h2>Zrównoważony rozwój <i class="fa-solid fa-arrow-pointer"></i></h2>
+        <p>Dążenie do zrównoważonego rozwoju wymaga wykorzystywania takich źródeł energii, które nie szkodzą środowisku. Energia słoneczna jest jednym z kluczowych elementów w walce o bardziej zrównoważony świat, pomagając zaspokoić rosnące zapotrzebowanie na energię przy jednoczesnym dbaniu o planetę.</p>
+      </div>
+    </div>
+  <script>
+    function clickListener() {
+      for (const box of boxes) {
+        if (box == this) {
+          continue;
+        }
+
+        box.classList.toggle("openbox_hidden");
+      }
+      this.classList.toggle("openbox_expanded");
+    }
+
+    var boxes = document.querySelectorAll(".openbox,.openbox_expanded");
+
+    for (const box of boxes) {
+      box.addEventListener('click', clickListener);
+    }
+
+   </script>
   </div>
   <div class="rightbar">
     <h1>Hiii</h1>
