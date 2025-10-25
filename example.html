@@ -5,35 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
+  <script src="https://kit.fontawesome.com/4185d1ab37.js" crossorigin="anonymous"></script>
   <title>Energia Sloneczna</title>
 </head>
 
 <body>
   <nav class="sidebar">
     <ul>
-      <li><a href="index.html" class="fg">Strona Glowna</a></li>
-      <li><a href="korz.html" class="green">Korzysci i Minusy</a></li>
-      <li class="active"><a href="example.html" class="blue">Przyklady Kosztow</a></li>
-      <li><a href="countries.html" class="yellow">Kraje Dominujace</a></li>
+      <li><a href="index.html" class="fg"><i class="fa-solid fa-house"></i>Strona Glowna</a></li>
+      <li><a href="korz.html" class="green"><i class="fa-solid fa-plus-minus green"></i>Korzysci i Minusy</a></li>
+      <li class="active"><a href="example.html" class="blue"><i class="fa-solid fa-money-bill-wave blue"></i>Przyklady Kosztow</a></li>
+      <li><a href="countries.html" class="yellow"><i class="fa-solid fa-earth-europe yellow"></i>Kraje Dominujace</a></li>
     </ul>
   </nav>
   <div class="content">
     <nav class="topbar">
-      <h1 class="blue">Przyklady Kosztow</h1>
+      <h1 class="blue">Przyklady Kosztow <i class="fa-solid fa-money-bill-wave blue"></i></h1>
     </nav>
 
     <div class="slidertext">
       <h2 class="sliderdesc">Zuzycie energi:</h2>
       <div class="slidercont">
-       <input type="range" min="0" max="1000" value="50" class="slider" id="energyRange">
+        <input type="range" min="0" max="1000" value="900" class="slider" id="energyRange">
       </div>
-     <h2 class="sliderout"><span id="energy" class="blue"></span> kWh/miesiac</h2>
+      <h2 class="sliderout"><span id="energy" class="blue"></span> kWh/miesiac</h2>
     </div>
 
     <div class="slidertext">
       <h2 class="sliderdesc">Cena pradu na miesiac:</h2>
       <div class="slidercont">
-       <input type="range" min="0" max="5" value="1" step="0.01" class="slider" id="priceRange">
+        <input type="range" min="0" max="5" value="1.1" step="0.01" class="slider" id="priceRange">
       </div>
       <h2 class="sliderout"><span id="price" class="yellow"></span> zl/kWh</h2>
     </div>
@@ -41,39 +42,84 @@
     <div class="slidertext">
       <h2 class="sliderdesc">Energia produkowana przez panele:</h2>
       <div class="slidercont">
-       <input type="range" min="0" max="1000" value="50" class="slider" id="sizeRange">
+        <input type="range" min="0" max="1000" value="700" class="slider" id="sizeRange">
       </div>
       <h2 class="sliderout"><span id="size" class="green"></span> kWh/miesiac</h2>
     </div>
 
 
-  <div class="energycontent">
-    <h2>Koszt energi bez solaru: </h2>
-    <p><span id="calcenergy" class="blue"></span> kWh/miesiac * <span id="calcprice" class="yellow"></span> zl = <span id="calctotalprice" class="red"></span></p>
-  </div>
-  <script>
+    <div class="energycontent">
+      <h2>Koszt energi bez solaru: </h2>
+      <p><span id="calcenergy" class="blue"></span> kWh/miesiac * <span id="calcprice" class="yellow"></span> zl/kWh =
+        <span id="wo_solar" class="red"></span> zl/miesiac
+      </p>
+      <br>
+      <h2>Koszt energi z panelami slonecznymi: </h2>
+      <p>(<span id="calc2energy" class="blue"></span> kWh/miesiac - <span id="calcsize" class="green"></span>
+        kWh/miesiac ) * <span id="calc2price" class="yellow"></span> zl/kWh = <span id="w_solar" class="green"></span>
+        zl/miesiac</p>
+      <br>
+      <h2>Oszczednosc: </h2>
+      <p><span id="wo_solar2" class="red"></span> zl/miesiac - <span id="w_solar2" class="green"></span> zl/miesiac = <span id="savings" class="green"></span> zl/miesiac</p>
+    </div>
+    <script>
       function useSlider(name) {
 
         var slider = document.getElementById(name.concat("Range"));
         var out = document.getElementById(name);
         var calc = document.getElementById("calc".concat(name));
+        var calc2 = document.getElementById("calc2".concat(name));
 
         out.innerHTML = slider.value;
         calc.innerHTML = slider.value;
+        if (calc2) {
+          calc2.innerHTML = slider.value;
+        }
 
-        slider.oninput = function() {
+        calculations();
+
+        slider.oninput = function () {
           out.innerHTML = this.value;
           calc.innerHTML = this.value;
-       }
+          if (calc2) {
+            calc2.innerHTML = slider.value;
+          }
+          calculations();
+        }
+
+      }
+      useSlider("energy");
+      useSlider("price");
+      useSlider("size");
+
+      function calculations() {
+        var bought_energy = document.getElementById("energyRange").value;
+        var price = document.getElementById("priceRange").value;
+        var solar_energy = document.getElementById("sizeRange").value;
+
+        var price_without_solar_span = document.getElementById("wo_solar");
+        var price_with_solar_span = document.getElementById("w_solar");
+        var price_without_solar_span2 = document.getElementById("wo_solar2");
+        var price_with_solar_span2 = document.getElementById("w_solar2");
+
+        var savings_span = document.getElementById("savings");
+
+        var price_wo_solar = bought_energy * price;
+        var price_w_solar = (bought_energy - solar_energy) * price;
+        var savings = price_wo_solar - price_w_solar;
+
+        price_without_solar_span.innerHTML = price_wo_solar.toFixed(2);
+        price_with_solar_span.innerHTML = price_w_solar.toFixed(2);
+
+        price_without_solar_span2.innerHTML = price_wo_solar.toFixed(2);
+        price_with_solar_span2.innerHTML = price_w_solar.toFixed(2);
+        savings_span.innerHTML = savings.toFixed(2);
      }
-     useSlider("energy");
-     useSlider("price");
-     useSlider("size");
-  </script>
+    </script>
 
   </div>
   <div class="rightbar">
-    <h1>Hiii</h1>
+    <h1>[JAKAS REKLAMA]</h1>
   </div>
 </body>
 

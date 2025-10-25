@@ -90,6 +90,10 @@ p {
   transition: 0.5s;
   color: var(--bg1);
 }
+.sidebar>ul>li:hover>a>i {
+  transition: 0.5s;
+  color: var(--bg1);
+}
 
 .rightbar {
   background-color: var(--bg1);
