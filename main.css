@@ -49,6 +49,23 @@ body {
 
 p {
   font-size: 15pt;
+} 
+
+hr {
+  color: var(--bg0);
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.zoom:hover {
+  line-height: 3.5rem;
+  font-size: 30pt;
+  transition: .3s;
+}
+.zoom {
+  line-height: 2.0rem;
+  font-size: 15pt;
+  transition: .3s;
 }
 
 .sidebar {
@@ -162,6 +179,13 @@ p {
   transition: .2s;
 }
 
+.greenbox .openbox {
+  border-color: var(--green);
+}
+.redbox .openbox {
+  border-color: var(--red);
+}
+
 .openbox h2 {
   text-align: center;
   transition: .2s;
@@ -203,6 +227,6 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  height: 20%
+  height: 40%
 }
 

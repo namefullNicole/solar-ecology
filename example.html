@@ -78,14 +78,14 @@
 
         calculations();
 
-        slider.oninput = function () {
+        slider.addEventListener('input', function() {
           out.innerHTML = this.value;
           calc.innerHTML = this.value;
           if (calc2) {
             calc2.innerHTML = slider.value;
           }
           calculations();
-        }
+        });
 
       }
       useSlider("energy");

@@ -65,25 +65,25 @@
         <p>Dążenie do zrównoważonego rozwoju wymaga wykorzystywania takich źródeł energii, które nie szkodzą środowisku. Energia słoneczna jest jednym z kluczowych elementów w walce o bardziej zrównoważony świat, pomagając zaspokoić rosnące zapotrzebowanie na energię przy jednoczesnym dbaniu o planetę.</p>
       </div>
     </div>
-  <script>
-    function clickListener() {
-      for (const box of boxes) {
-        if (box == this) {
-          continue;
+    <script>
+      function clickListener() {
+        for (const box of boxes) {
+          if (box == this) {
+            continue;
+          }
+
+          box.classList.toggle("openbox_hidden");
         }
-
-        box.classList.toggle("openbox_hidden");
+        this.classList.toggle("openbox_expanded");
       }
-      this.classList.toggle("openbox_expanded");
-    }
 
-    var boxes = document.querySelectorAll(".openbox,.openbox_expanded");
+      var boxes = document.querySelectorAll(".openbox,.openbox_expanded");
 
-    for (const box of boxes) {
-      box.addEventListener('click', clickListener);
-    }
+      for (const box of boxes) {
+        box.addEventListener('click', clickListener);
+      }
 
-   </script>
+    </script>
   </div>
   <div class="rightbar">
     <h1>Hiii</h1>
