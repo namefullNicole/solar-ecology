@@ -101,6 +101,7 @@ hr {
 .sidebar>ul>li:hover {
   transition: 0.5s;
   background-color: var(--fg);
+  cursor: grab;
 }
 
 .sidebar>ul>li:hover>a {

@@ -6,37 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://kit.fontawesome.com/4185d1ab37.js" crossorigin="anonymous"></script>
-  <title>Energia Sloneczna</title>
+  <title>Energia Słoneczna</title>
 </head>
 
 <body>
   <nav class="sidebar">
     <ul>
-      <li><a href="index.html" class="fg"><i class="fa-solid fa-house"></i>Strona Glowna</a></li>
-      <li><a href="korz.html" class="green"><i class="fa-solid fa-plus-minus green"></i>Korzysci i Minusy</a></li>
-      <li class="active"><a href="example.html" class="blue"><i class="fa-solid fa-money-bill-wave blue"></i>Przyklady Kosztow</a></li>
-      <li><a href="countries.html" class="yellow"><i class="fa-solid fa-earth-europe yellow"></i>Kraje Dominujace</a></li>
+      <li><a href="index.html" class="fg"><i class="fa-solid fa-house"></i>Strona Główna</a></li>
+      <li><a href="korz.html" class="green"><i class="fa-solid fa-plus-minus green"></i>Korzyści i Minusy</a></li>
+      <li class="active"><a href="example.html" class="blue"><i class="fa-solid fa-money-bill-wave blue"></i>Przykłady Kosztów</a></li>
+      <li><a href="countries.html" class="yellow"><i class="fa-solid fa-earth-europe yellow"></i>Kraje Dominujące</a></li>
     </ul>
   </nav>
   <div class="content">
     <nav class="topbar">
-      <h1 class="blue">Przyklady Kosztow <i class="fa-solid fa-money-bill-wave blue"></i></h1>
+      <h1 class="blue">Przykłady Kosztów <i class="fa-solid fa-money-bill-wave blue"></i></h1>
     </nav>
 
     <div class="slidertext">
-      <h2 class="sliderdesc">Zuzycie energi:</h2>
+      <h2 class="sliderdesc">Zużycie energi:</h2>
       <div class="slidercont">
         <input type="range" min="0" max="1000" value="900" class="slider" id="energyRange">
       </div>
-      <h2 class="sliderout"><span id="energy" class="blue"></span> kWh/miesiac</h2>
+      <h2 class="sliderout"><span id="energy" class="blue"></span> kWh/miesiąc</h2>
     </div>
 
     <div class="slidertext">
-      <h2 class="sliderdesc">Cena pradu na miesiac:</h2>
+      <h2 class="sliderdesc">Cena prądu na miesiąc:</h2>
       <div class="slidercont">
         <input type="range" min="0" max="5" value="1.1" step="0.01" class="slider" id="priceRange">
       </div>
-      <h2 class="sliderout"><span id="price" class="yellow"></span> zl/kWh</h2>
+      <h2 class="sliderout"><span id="price" class="yellow"></span> zł/kWh</h2>
     </div>
 
     <div class="slidertext">
@@ -44,23 +44,23 @@
       <div class="slidercont">
         <input type="range" min="0" max="1000" value="700" class="slider" id="sizeRange">
       </div>
-      <h2 class="sliderout"><span id="size" class="green"></span> kWh/miesiac</h2>
+      <h2 class="sliderout"><span id="size" class="green"></span> kWh/miesiąc</h2>
     </div>
 
 
     <div class="energycontent">
       <h2>Koszt energi bez solaru: </h2>
-      <p><span id="calcenergy" class="blue"></span> kWh/miesiac * <span id="calcprice" class="yellow"></span> zl/kWh =
-        <span id="wo_solar" class="red"></span> zl/miesiac
+      <p><span id="calcenergy" class="blue"></span> kWh/miesiąc * <span id="calcprice" class="yellow"></span> zł/kWh =
+        <span id="wo_solar" class="red"></span> zł/miesiąc
       </p>
       <br>
-      <h2>Koszt energi z panelami slonecznymi: </h2>
-      <p>(<span id="calc2energy" class="blue"></span> kWh/miesiac - <span id="calcsize" class="green"></span>
-        kWh/miesiac ) * <span id="calc2price" class="yellow"></span> zl/kWh = <span id="w_solar" class="green"></span>
-        zl/miesiac</p>
+      <h2>Koszt energi z panelami słonecznymi: </h2>
+      <p>(<span id="calc2energy" class="blue"></span> kWh/miesiąc - <span id="calcsize" class="green"></span>
+        kWh/miesiąc ) * <span id="calc2price" class="yellow"></span> zł/kWh = <span id="w_solar" class="green"></span>
+        zł/miesiąc</p>
       <br>
-      <h2>Oszczednosc: </h2>
-      <p><span id="wo_solar2" class="red"></span> zl/miesiac - <span id="w_solar2" class="green"></span> zl/miesiac = <span id="savings" class="green"></span> zl/miesiac</p>
+      <h2>Oszczędność: </h2>
+      <p><span id="wo_solar2" class="red"></span> zł/miesiąc - <span id="w_solar2" class="green"></span> zł/miesiąc = <span id="savings" class="green"></span> zł/miesiąc</p>
     </div>
     <script>
       function useSlider(name) {
